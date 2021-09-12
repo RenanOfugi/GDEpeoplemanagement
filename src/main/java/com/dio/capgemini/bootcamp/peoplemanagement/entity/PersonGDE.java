@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Person {
+public class PersonGDE {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
