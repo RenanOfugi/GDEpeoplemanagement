@@ -32,7 +32,7 @@ public class PersonGdeDTO {
 
     @Valid
     @NotEmpty
-    private List<Phone> phones;
+    private List<PhonesDTO> phones;
 
     @NotEmpty
     private String github;
