@@ -20,11 +20,6 @@ public class PersonController {
         this.personGDEService = personGDEService;
     }
 
-    @RequestMapping("/")
-    void handleFoo(HttpServletResponse response) throws IOException {
-        response.sendRedirect("https://gde-people-management.herokuapp.com/api/v1/people");
-    }
-
     @GetMapping
     public String getMessage(){
         return "Ainda em manutenção";
