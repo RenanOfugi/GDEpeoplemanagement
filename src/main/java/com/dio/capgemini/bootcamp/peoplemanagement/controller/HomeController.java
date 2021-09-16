@@ -2,7 +2,9 @@ package com.dio.capgemini.bootcamp.peoplemanagement.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -11,7 +13,13 @@ import java.io.IOException;
 public class HomeController {
 
     @RequestMapping("/")
-    void handleFoo(HttpServletResponse response) throws IOException {
-        response.sendRedirect("https://gde-people-management.herokuapp.com/api/v1/people");
+    void handleFoo(HttpServletResponse response, HttpServletRequest request) throws IOException {
+        String baseUrl = ServletUriComponentsBuilder
+                .fromRequestUri(request)
+                .replacePath(null)
+                .build()
+                .toUriString();
+
+        response.sendRedirect(baseUrl + "/api/v1/people");
     }
 }
