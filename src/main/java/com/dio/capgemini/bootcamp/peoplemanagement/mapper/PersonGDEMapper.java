@@ -8,8 +8,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface PersonGDEMapper {
+
     PersonGDEMapper INSTANCE = Mappers.getMapper(PersonGDEMapper.class);
 
     //@Mapping()
     PersonGDE toModel(PersonGdeDTO gdeDTO);
+
+    PersonGdeDTO toDTO(PersonGDE personGDE);
 }

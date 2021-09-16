@@ -27,7 +27,7 @@ public class PersonGDE {
     @Column(nullable = false)
     private String lastName;
 
-    private LocalDate birthday;
+    //private LocalDate birthday;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
     @ToString.Exclude
