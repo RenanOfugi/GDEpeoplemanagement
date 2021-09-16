@@ -2,14 +2,11 @@ package com.dio.capgemini.bootcamp.peoplemanagement.controller;
 
 import com.dio.capgemini.bootcamp.peoplemanagement.dto.request.PersonGdeDTO;
 import com.dio.capgemini.bootcamp.peoplemanagement.dto.response.MessageResponseDTO;
-import com.dio.capgemini.bootcamp.peoplemanagement.entity.PersonGDE;
 import com.dio.capgemini.bootcamp.peoplemanagement.service.PersonGDEService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.IOException;
 import java.util.List;
 
 @RestController
