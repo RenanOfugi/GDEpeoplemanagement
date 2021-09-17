@@ -26,15 +26,12 @@ public class PersonGDEService {
     }
 
     public MessageResponseDTO createGDE(PersonGdeDTO gdeDTO) {
-        PersonGDE gde = mapper.toModel(gdeDTO);
-        PersonGDE personGDESave = personRepository.save(gde);
-        return insertGDE(personGDESave, "Criado com Sucesso");
+        return insertGDE(gdeDTO, "Criado com Sucesso");
     }
 
     public MessageResponseDTO updateGDE(Long id, PersonGdeDTO gdeDTO){
-        PersonGDE gde = findGDE(id, "User already exists");
-        personRepository.save(gde);
-        return insertGDE(gde, "Atualizado com Sucesso");
+        findGDE(id, "User already exists");
+        return insertGDE(gdeDTO, "Atualizado com Sucesso");
     }
 
     public List<PersonGdeDTO> listAll() {
@@ -56,15 +53,9 @@ public class PersonGDEService {
         return personRepository.findById(id).orElseThrow(() -> new GDEException(messageException));
     }
 
-    /*private MessageResponseDTO insertGDE(PersonGdeDTO gdeDTO, String message){
+    private MessageResponseDTO insertGDE(PersonGdeDTO gdeDTO, String message){
         PersonGDE person = mapper.toModel(gdeDTO);
         PersonGDE personGDESave = personRepository.save(person);
         return MessageResponseDTO.builder().message("GDE " + personGDESave.getId() + ": " + message).build();
-    }*/
-
-    private MessageResponseDTO insertGDE(PersonGDE gde, String message){
-        //PersonGDE person = mapper.toModel(gdeDTO);
-        //PersonGDE personGDESave = personRepository.save(person);
-        return MessageResponseDTO.builder().message("GDE " + gde.getId() + ": " + message).build();
     }
 }
