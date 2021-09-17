@@ -37,7 +37,7 @@ public class PersonController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteGDEById(Long id){
+    public void deleteGDEById(@PathVariable Long id){
         personGDEService.deleteGDE(id);
     }
 
