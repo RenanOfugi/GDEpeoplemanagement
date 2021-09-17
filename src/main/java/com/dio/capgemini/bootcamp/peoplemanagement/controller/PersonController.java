@@ -21,8 +21,8 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createPerson(@RequestBody @Valid PersonGdeDTO gdeDTO) {
-        return personGDEService.createPerson(gdeDTO);
+    public MessageResponseDTO createGDE(@RequestBody @Valid PersonGdeDTO gdeDTO) {
+        return personGDEService.createGDE(gdeDTO);
     }
 
     @GetMapping
@@ -39,6 +39,11 @@ public class PersonController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteGDEById(@PathVariable Long id){
         personGDEService.deleteGDE(id);
+    }
+
+    @PutMapping("/{id}")
+    public MessageResponseDTO updateGDE(@PathVariable Long id, @RequestBody PersonGdeDTO gdeDTO){
+        return personGDEService.updateGDE(id, gdeDTO);
     }
 
 }

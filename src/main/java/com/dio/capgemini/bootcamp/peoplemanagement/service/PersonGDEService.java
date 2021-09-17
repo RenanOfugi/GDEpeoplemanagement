@@ -25,10 +25,13 @@ public class PersonGDEService {
         this.personRepository = personRepository; 
     }
 
-    public MessageResponseDTO createPerson(PersonGdeDTO gdeDTO) {
-        PersonGDE person = mapper.toModel(gdeDTO);
-        PersonGDE personGDESave = personRepository.save(person);
-        return MessageResponseDTO.builder().message("GDE " + personGDESave.getId() + ": Criado com sucesso").build();
+    public MessageResponseDTO createGDE(PersonGdeDTO gdeDTO) {
+        return insertGDE(gdeDTO, "Criado com Sucesso");
+    }
+
+    public MessageResponseDTO updateGDE(Long id, PersonGdeDTO gdeDTO){
+        findGDE(id, "User already exists");
+        return insertGDE(gdeDTO, "Atualizado com Sucesso");
     }
 
     public List<PersonGdeDTO> listAll() {
@@ -48,5 +51,11 @@ public class PersonGDEService {
 
     private PersonGDE findGDE(Long id, String messageException){
         return personRepository.findById(id).orElseThrow(() -> new GDEException(messageException));
+    }
+
+    private MessageResponseDTO insertGDE(PersonGdeDTO gdeDTO, String message){
+        PersonGDE person = mapper.toModel(gdeDTO);
+        PersonGDE personGDESave = personRepository.save(person);
+        return MessageResponseDTO.builder().message("GDE " + personGDESave.getId() + ": " + message).build();
     }
 }
