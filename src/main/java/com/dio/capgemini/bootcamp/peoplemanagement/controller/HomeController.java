@@ -20,6 +20,6 @@ public class HomeController {
                 .build()
                 .toUriString();
 
-        response.sendRedirect(baseUrl + "/api/v1/people");
+        response.sendRedirect(baseUrl + "/api/v1/gde");
     }
 }

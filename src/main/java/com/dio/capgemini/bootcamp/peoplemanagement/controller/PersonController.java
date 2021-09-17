@@ -10,7 +10,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/people")
+@RequestMapping("/api/v1/gde")
 public class PersonController {
 
     PersonGDEService personGDEService;
@@ -33,6 +33,12 @@ public class PersonController {
     @GetMapping("/{id}")
     public PersonGdeDTO findById(@PathVariable Long id){
         return personGDEService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteGDEById(Long id){
+        personGDEService.deleteGDE(id);
     }
 
 }

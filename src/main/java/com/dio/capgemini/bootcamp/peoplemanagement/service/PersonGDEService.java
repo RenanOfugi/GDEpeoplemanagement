@@ -37,11 +37,16 @@ public class PersonGDEService {
     }
 
     public PersonGdeDTO findById(Long id) {
-        Optional<PersonGDE> gdeOptional = personRepository.findById(id);
-        if(gdeOptional.isPresent()){
-            return mapper.toDTO(gdeOptional.get());
-        } else {
-            throw new GDEException("GDE's ID not found");
-        }
+        PersonGDE gde = findGDE(id, "GDE's ID not found");
+        return mapper.toDTO(gde);
+    }
+
+    public void deleteGDE(Long id) {
+        findGDE(id, "GDE's ID not found for delete");
+        personRepository.deleteById(id);
+    }
+
+    private PersonGDE findGDE(Long id, String messageException){
+        return personRepository.findById(id).orElseThrow(() -> new GDEException(messageException));
     }
 }
