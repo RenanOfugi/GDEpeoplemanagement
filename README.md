@@ -31,7 +31,7 @@ Foram utilizado as seguintes tecnologias e ferramentas para o desenvolvimento:
 Após fazer o clone deste repositório em sua máquina local, temos duas alternarnativas para realizar a execução:
 
 1. **Com uma IDE Java**. Abra uma IDE e caso o maven esteja corretamente configurado, simplesmente clique no botão de executar normalmente. 
-2.  **Por um terminal**, sem o uso da IDE. Neste texto irei descrever a execução em uma distribuição Linux baseada em Debian:
+2.  **Por um terminal**, sem o uso da IDE. Neste texto irei descrever a execução em uma distribuição Linux:
    * Abra o terminal e navegue até a pasta que foi clonada
    * Execute `mvn spring-boot:run`
 
