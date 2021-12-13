@@ -2,7 +2,7 @@
 
 # GDEpeoplemanagement
 
-## Projeto referente ao Bootcamp DIO da Capgemini - Java and Angular
+## Projeto Bootcamp
 
 
 
