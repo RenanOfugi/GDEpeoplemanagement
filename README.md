@@ -41,7 +41,31 @@ Após esses passos, será criado uma instância executando em `localhost:8080`, 
 
 Foi realizado o deploy no Heroku deste projeto, ou seja, as operações poderão ser realizados utilizando esta [URL](https://gde-people-management.herokuapp.com)
 
+### Executando um teste POST
 
+Tanto localmente quanto no Heroku, provavelmente não haverá dados. Para realizar inserção via POST, utilize como exemple o seguinte JSON:
+
+`{
+	"firstName": "Justin",
+	"lastName": "Schwartzenberger",
+	"phones": [
+		{ 
+			"type": "HOME",
+			"number": "123456789"
+		},
+		{ 
+			"type": "MOBILE",
+			"number": "123456789"
+		},
+		{ 
+			"type":"COMMERCIAL",
+			"number": "123456789"
+		}
+	],
+	"github": "https://github.com/jschwarty",
+	"category": "Angular, Web Technologies (Runtime performance, CSS & DevTools)",
+	"googleBiography": "Justin Schwartzenberger is the host of the weekly AngularAir live video broadcast, a frequent conference speaker and an open source contributor. Justin combines a passion for front-end development with a strong back-end skill set."
+}`
 
 ## Licença
 
