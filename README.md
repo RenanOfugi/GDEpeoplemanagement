@@ -45,7 +45,8 @@ Foi realizado o deploy no Heroku deste projeto, ou seja, as operações poderão
 
 Tanto localmente quanto no Heroku, provavelmente não haverá dados. Para realizar inserção via POST, utilize como exemple o seguinte JSON:
 
-`{
+```json
+{
 	"firstName": "Justin",
 	"lastName": "Schwartzenberger",
 	"phones": [
@@ -65,7 +66,8 @@ Tanto localmente quanto no Heroku, provavelmente não haverá dados. Para realiz
 	"github": "https://github.com/jschwarty",
 	"category": "Angular, Web Technologies (Runtime performance, CSS & DevTools)",
 	"googleBiography": "Justin Schwartzenberger is the host of the weekly AngularAir live video broadcast, a frequent conference speaker and an open source contributor. Justin combines a passion for front-end development with a strong back-end skill set."
-}`
+}
+```
 
 ## Licença
 
